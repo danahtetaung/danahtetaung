@@ -9,7 +9,7 @@ requirement_refs:
 tracker_refs: []
 planning_base_branch: codex/mobile-friendly-portfolio
 merge_target_branch: codex/mobile-friendly-portfolio
-branch_strategy: coordination
+branch_strategy: Planning artifacts for this mission were generated on codex/mobile-friendly-portfolio. During /spec-kitty.implement this WP may branch from a dependency-specific base, but completed changes must merge back into codex/mobile-friendly-portfolio unless the human explicitly redirects the landing branch.
 subtasks:
 - T014
 - T015
@@ -22,7 +22,8 @@ history:
   actor: codex
 agent_profile: frontend-freddy
 authoritative_surface: README.md
-create_intent: []
+create_intent:
+- README.md
 execution_mode: code_change
 owned_files:
 - README.md
