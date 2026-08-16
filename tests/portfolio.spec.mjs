@@ -39,17 +39,19 @@ test.describe('responsive route contract', () => {
 test.describe('public actions', () => {
   test('home routes and contact destinations are correct', async ({ page }) => {
     await page.goto('/');
-    await expect(page.getByRole('link', { name: 'LinkedIn' })).toHaveAttribute(
-      'href',
-      'https://www.linkedin.com/in/dana-htetaung-1b55782b6/',
-    );
-    await expect(page.getByRole('link', { name: 'Email' })).toHaveAttribute(
-      'href',
-      'mailto:danahtetaungbiz@gmail.com',
-    );
-    await expect(page.getByRole('link', { name: 'Services' })).toHaveAttribute('href', '/services/');
-    await expect(page.getByRole('link', { name: 'Portfolio' })).toHaveAttribute('href', '/portfolio/');
-    await expect(page.getByRole('link', { name: 'Resume' })).toHaveAttribute('href', '/resume/');
+    const actions = [
+      ['LinkedIn', 'https://www.linkedin.com/in/dana-htetaung-1b55782b6/'],
+      ['Email', 'mailto:danahtetaungbiz@gmail.com'],
+      ['Services', '/services/'],
+      ['Portfolio', '/portfolio/'],
+      ['Resume', '/resume/'],
+    ];
+
+    for (const [name, href] of actions) {
+      const action = page.getByRole('link', { name, exact: true });
+      await expect(action).toHaveAccessibleName(name);
+      await expect(action).toHaveAttribute('href', href);
+    }
   });
 
   test('services provides working call and email actions', async ({ page }) => {
