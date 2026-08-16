@@ -1,6 +1,17 @@
 ---
+affected_files:
+- path: package.json
+- path: package-lock.json
+- path: playwright.config.mjs
+- path: scripts/validate-site.mjs
+- path: tests/portfolio.spec.mjs
+cycle_number: 3
+mission_slug: mobile-friendly-portfolio-01M053C7
+reproduction_command: npm test
+reviewed_at: '2026-08-16T11:19:56Z'
+reviewer_agent: codex
 verdict: approved
-reviewer: codex
+wp_id: WP01
 ---
 
 ## Review verdict
