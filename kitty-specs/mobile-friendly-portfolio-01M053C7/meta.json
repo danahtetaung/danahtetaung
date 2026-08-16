@@ -4,7 +4,7 @@
   "flattened": false,
   "friendly_name": "Mobile-Friendly Portfolio",
   "mission_id": "01M053C7WBNF11K2X8QMRP5CZT",
-  "mission_number": null,
+  "mission_number": 1,
   "mission_slug": "mobile-friendly-portfolio-01M053C7",
   "mission_type": "software-dev",
   "pr_bound": true,
