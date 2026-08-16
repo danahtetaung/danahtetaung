@@ -69,10 +69,10 @@
 **Prompt**: [tasks/WP03-responsive-visual-system-and-wave.md](./tasks/WP03-responsive-visual-system-and-wave.md)  
 **Independent test**: The site matches the monochrome live identity, has no overflow from 320 to 1,440 pixels, provides 44-pixel touch targets, and stops continuous motion when requested.
 
-- [ ] T010 Implement the shared responsive visual and interaction contract (WP03)
-- [ ] T011 Implement the responsive wave renderer and lifecycle controls (WP03)
-- [ ] T012 Add reduced-motion, failure, landscape, zoom, and keyboard safeguards (WP03)
-- [ ] T013 Satisfy the full layout and accessibility assertions without weakening tests (WP03)
+- [x] T010 Implement the shared responsive visual and interaction contract (WP03)
+- [x] T011 Implement the responsive wave renderer and lifecycle controls (WP03)
+- [x] T012 Add reduced-motion, failure, landscape, zoom, and keyboard safeguards (WP03)
+- [x] T013 Satisfy the full layout and accessibility assertions without weakening tests (WP03)
 
 **Implementation sketch**: Create one stylesheet for the shared shell, pill reflow, inner-route content, resume behavior, focus states, and breakpoints. Add a separate decorative canvas renderer with DPR capping, resize handling, reduced-motion still rendering, and visibility pausing.
 
