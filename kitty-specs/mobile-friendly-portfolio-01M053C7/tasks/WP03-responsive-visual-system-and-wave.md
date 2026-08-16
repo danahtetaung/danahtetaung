@@ -19,7 +19,8 @@ subtasks:
 - T011
 - T012
 - T013
-agent: codex
+agent: "codex"
+shell_pid: "18880"
 history:
 - timestamp: '2026-08-16T10:58:48Z'
   event: planned
@@ -117,3 +118,14 @@ Use WP01 black-box tests as the contract. Add manual visual comparison only for 
 ## Reviewer Guidance
 
 Review at 320, 390, 768, landscape, and desktop widths. Reject CSS that hides content to satisfy overflow, controls that meet target size only through invisible overlap, or animation that continues under reduced motion or a hidden document.
+
+## Activity Log
+
+- 2026-08-16T11:27:36Z – codex – shell_pid=44908 – Assigned agent via action command
+- 2026-08-16T11:35:30Z – codex – shell_pid=44908 – Ready for review: final build and 41/41 tests pass; visual captures inspected at 320, 390, 844x390, and 1440; wave and spacing align with the live monochrome reference.
+- 2026-08-16T11:35:41Z – codex – shell_pid=4500 – Started review via action command
+- 2026-08-16T11:39:11Z – user – shell_pid=4500 – Moved to planned
+- 2026-08-16T11:39:30Z – codex – shell_pid=37344 – Started implementation via action command
+- 2026-08-16T11:43:52Z – codex – shell_pid=37344 – Ready for review: replaced continuous canvas redraws with compositor-only drift; build and 41/41 tests pass; all four mobile Lighthouse audits score 100 performance and 100 accessibility; optimized 320 and 1440 captures inspected.
+- 2026-08-16T11:44:06Z – codex – shell_pid=18880 – Started review via action command
+- 2026-08-16T11:45:01Z – user – shell_pid=18880 – Review passed: 41/41 browser tests, 100/100 mobile Lighthouse performance and accessibility on all four routes, owned-file scope clean, and optimized mobile/desktop captures visually approved.
