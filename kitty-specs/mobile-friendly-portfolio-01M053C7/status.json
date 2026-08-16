@@ -1,7 +1,7 @@
 {
-  "event_count": 11,
-  "last_event_id": "01M054G4KC4YYA27HJC7GYQ0VA",
-  "materialized_at": "2026-08-16T11:14:50.523166+00:00",
+  "event_count": 13,
+  "last_event_id": "01M054JZ5DSQBY5WXKR06HVSMF",
+  "materialized_at": "2026-08-16T11:16:23.341035+00:00",
   "mission_number": "",
   "mission_slug": "mobile-friendly-portfolio-01M053C7",
   "mission_type": "software-dev",
@@ -12,17 +12,17 @@
     "claimed": 0,
     "done": 0,
     "for_review": 0,
-    "in_progress": 1,
-    "in_review": 0,
+    "in_progress": 0,
+    "in_review": 1,
     "planned": 3
   },
   "work_packages": {
     "WP01": {
       "actor": "codex",
       "force_count": 1,
-      "lane": "in_progress",
-      "last_event_id": "01M054G4KC4YYA27HJC7GYQ0VA",
-      "last_transition_at": "2026-08-16T11:14:50.523166+00:00"
+      "lane": "in_review",
+      "last_event_id": "01M054JZ5DSQBY5WXKR06HVSMF",
+      "last_transition_at": "2026-08-16T11:16:23.341035+00:00"
     },
     "WP02": {
       "actor": "finalize-tasks",
