@@ -32,10 +32,10 @@
 **Prompt**: [tasks/WP01-acceptance-harness.md](./tasks/WP01-acceptance-harness.md)  
 **Independent test**: The legacy site fails for the intended reasons, including missing routes or mobile contract violations; the harness itself starts and reports actionable failures.
 
-- [ ] T001 Establish deterministic package scripts and browser-test configuration (WP01)
-- [ ] T002 Add a structural static-site validator (WP01)
-- [ ] T003 Author black-box route, responsive, touch-target, motion, and resume tests (WP01)
-- [ ] T004 Run the harness against the legacy baseline and confirm meaningful failures (WP01)
+- [x] T001 Establish deterministic package scripts and browser-test configuration (WP01)
+- [x] T002 Add a structural static-site validator (WP01)
+- [x] T003 Author black-box route, responsive, touch-target, motion, and resume tests (WP01)
+- [x] T004 Run the harness against the legacy baseline and confirm meaningful failures (WP01)
 
 **Implementation sketch**: Replace the obsolete Gulp-only package surface with reproducible serve, validate, and test commands. Create structural checks that inspect public files and black-box browser checks that exercise only served routes and rendered behavior. Prove the tests fail on the old site before implementation.
 

@@ -12,5 +12,7 @@
   "purpose_tldr": "Recreate the deployed minimalist portfolio in its designated repository and make it fully usable on phones.",
   "slug": "mobile-friendly-portfolio-01M053C7",
   "target_branch": "codex/mobile-friendly-portfolio",
-  "topology": "coord"
+  "topology": "coord",
+  "vcs": "git",
+  "vcs_locked_at": "2026-08-16T11:07:42.076217+00:00"
 }
