@@ -18,6 +18,26 @@
     // Remove no-js class
     $('html').removeClass('no-js');
 
+    var $header = $('header');
+    var $body = $('body');
+    var $menuOpen = $('#mobile-menu-open');
+    var $menuClose = $('#mobile-menu-close');
+
+    function openMobileMenu() {
+        $header.add($body).addClass('active');
+        $menuOpen.attr('aria-expanded', 'true');
+        $menuClose.trigger('focus');
+    }
+
+    function closeMobileMenu(restoreFocus) {
+        $header.add($body).removeClass('active');
+        $menuOpen.attr('aria-expanded', 'false');
+
+        if (restoreFocus) {
+            $menuOpen.trigger('focus');
+        }
+    }
+
     // Animate to section when nav is clicked
     $('header a').click(function(e) {
 
@@ -33,8 +53,8 @@
         }, Math.abs(window.pageYOffset - $(heading).offset().top) / 1);
 
         // Hide the menu once clicked if mobile
-        if ($('header').hasClass('active')) {
-            $('header, body').removeClass('active');
+        if ($header.hasClass('active')) {
+            closeMobileMenu(false);
         }
     });
 
@@ -46,7 +66,7 @@
     });
 
     // Scroll to first element
-    $('#lead-down span').click(function() {
+    $('#lead-down button').click(function() {
         var scrollDistance = $('#lead').next().offset().top;
         $('html, body').animate({
             scrollTop: scrollDistance + 'px'
@@ -80,13 +100,27 @@
     });
 
     // Open mobile menu
-    $('#mobile-menu-open').click(function() {
-        $('header, body').addClass('active');
+    $menuOpen.click(function() {
+        openMobileMenu();
     });
 
     // Close mobile menu
-    $('#mobile-menu-close').click(function() {
-        $('header, body').removeClass('active');
+    $menuClose.click(function() {
+        closeMobileMenu(true);
+    });
+
+    // Close the mobile menu with Escape
+    $(document).keydown(function(e) {
+        if (e.key === 'Escape' && $header.hasClass('active')) {
+            closeMobileMenu(true);
+        }
+    });
+
+    // Reset mobile menu state when returning to the desktop layout
+    $(window).resize(function() {
+        if (window.innerWidth > 768 && $header.hasClass('active')) {
+            closeMobileMenu(false);
+        }
     });
 
     // Load additional projects
