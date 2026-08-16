@@ -19,7 +19,8 @@ subtasks:
 - T011
 - T012
 - T013
-agent: codex
+agent: "codex"
+shell_pid: "44908"
 history:
 - timestamp: '2026-08-16T10:58:48Z'
   event: planned
@@ -117,3 +118,8 @@ Use WP01 black-box tests as the contract. Add manual visual comparison only for 
 ## Reviewer Guidance
 
 Review at 320, 390, 768, landscape, and desktop widths. Reject CSS that hides content to satisfy overflow, controls that meet target size only through invisible overlap, or animation that continues under reduced motion or a hidden document.
+
+## Activity Log
+
+- 2026-08-16T11:27:36Z – codex – shell_pid=44908 – Assigned agent via action command
+- 2026-08-16T11:35:30Z – codex – shell_pid=44908 – Ready for review: final build and 41/41 tests pass; visual captures inspected at 320, 390, 844x390, and 1440; wave and spacing align with the live monochrome reference.
