@@ -24,7 +24,8 @@ subtasks:
 - T002
 - T003
 - T004
-agent: codex
+agent: "codex"
+shell_pid: "39060"
 history:
 - timestamp: '2026-08-16T10:58:48Z'
   event: planned
@@ -131,3 +132,7 @@ This WP is the test scaffold. It is complete only when both structural and rende
 ## Reviewer Guidance
 
 Reject tests that pass because controls are missing, rely on internal source structure, lower touch targets below 44 pixels, or skip small viewports. Confirm the suite would catch the verified 320/360-pixel navigation overflow and phone PDF problem.
+
+## Activity Log
+
+- 2026-08-16T11:07:45Z – codex – shell_pid=39060 – Assigned agent via action command
