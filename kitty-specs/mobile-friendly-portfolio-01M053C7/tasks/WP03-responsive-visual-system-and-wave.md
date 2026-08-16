@@ -20,7 +20,7 @@ subtasks:
 - T012
 - T013
 agent: "codex"
-shell_pid: "44908"
+shell_pid: "4500"
 history:
 - timestamp: '2026-08-16T10:58:48Z'
   event: planned
@@ -122,3 +122,5 @@ Review at 320, 390, 768, landscape, and desktop widths. Reject CSS that hides co
 ## Activity Log
 
 - 2026-08-16T11:27:36Z – codex – shell_pid=44908 – Assigned agent via action command
+- 2026-08-16T11:35:30Z – codex – shell_pid=44908 – Ready for review: final build and 41/41 tests pass; visual captures inspected at 320, 390, 844x390, and 1440; wave and spacing align with the live monochrome reference.
+- 2026-08-16T11:35:41Z – codex – shell_pid=4500 – Started review via action command
