@@ -1,0 +1,15 @@
+{
+  "coordination_branch": "kitty/mission-mobile-friendly-portfolio-01M053C7",
+  "created_at": "2026-08-16T10:55:14.317524+00:00",
+  "flattened": false,
+  "friendly_name": "Mobile-Friendly Portfolio",
+  "mission_id": "01M053C7WBNF11K2X8QMRP5CZT",
+  "mission_number": null,
+  "mission_slug": "mobile-friendly-portfolio-01M053C7",
+  "mission_type": "software-dev",
+  "purpose_context": "The repository currently contains an older static template, while the live site uses a minimalist black-and-white wave design with Services, Portfolio, and Resume routes. The mission will establish the live design as maintained source, eliminate narrow-screen overflow, improve touch and motion accessibility, and deliver readable mobile inner pages without regressing tablet or desktop layouts.",
+  "purpose_tldr": "Recreate the deployed minimalist portfolio in its designated repository and make it fully usable on phones.",
+  "slug": "mobile-friendly-portfolio-01M053C7",
+  "target_branch": "codex/mobile-friendly-portfolio",
+  "topology": "coord"
+}
