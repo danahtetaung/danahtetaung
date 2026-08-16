@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "mission_slug": "mobile-friendly-portfolio-01M053C7",
+  "mission_id": "01M053C7WBNF11K2X8QMRP5CZT",
+  "mission_branch": "kitty/mission-mobile-friendly-portfolio-01M053C7",
+  "target_branch": "codex/mobile-friendly-portfolio",
+  "lanes": [
+    {
+      "lane_id": "lane-a",
+      "wp_ids": [
+        "WP01"
+      ],
+      "write_scope": [
+        "package-lock.json",
+        "package.json",
+        "playwright.config.mjs",
+        "scripts/validate-site.mjs",
+        "tests/portfolio.spec.mjs"
+      ],
+      "predicted_surfaces": [
+        "api",
+        "app-shell",
+        "artifact-rendering",
+        "legacy-cleanup"
+      ],
+      "depends_on_lanes": [],
+      "parallel_group": 0
+    },
+    {
+      "lane_id": "lane-b",
+      "wp_ids": [
+        "WP02"
+      ],
+      "write_scope": [
+        "assets/resume.pdf",
+        "favicon.ico",
+        "index.html",
+        "portfolio/index.html",
+        "resume/index.html",
+        "services/index.html"
+      ],
+      "predicted_surfaces": [
+        "api",
+        "app-shell",
+        "artifact-rendering"
+      ],
+      "depends_on_lanes": [
+        "lane-a"
+      ],
+      "parallel_group": 1
+    },
+    {
+      "lane_id": "lane-c",
+      "wp_ids": [
+        "WP03"
+      ],
+      "write_scope": [
+        "assets/site.js",
+        "assets/styles.css",
+        "assets/wave.js"
+      ],
+      "predicted_surfaces": [
+        "api",
+        "app-shell",
+        "artifact-rendering"
+      ],
+      "depends_on_lanes": [
+        "lane-b"
+      ],
+      "parallel_group": 2
+    },
+    {
+      "lane_id": "lane-d",
+      "wp_ids": [
+        "WP04"
+      ],
+      "write_scope": [
+        "README.md",
+        "css/**",
+        "font-awesome/**",
+        "gulpfile.js",
+        "images/**",
+        "js/**",
+        "styles.scss"
+      ],
+      "predicted_surfaces": [
+        "api",
+        "app-shell",
+        "artifact-rendering",
+        "legacy-cleanup"
+      ],
+      "depends_on_lanes": [
+        "lane-c"
+      ],
+      "parallel_group": 3
+    }
+  ],
+  "computed_at": "2026-08-16T11:01:52.820697+00:00",
+  "computed_from": "dependency_graph+ownership",
+  "planning_artifact_wps": []
+}
