@@ -87,10 +87,10 @@
 **Prompt**: [tasks/WP04-cleanup-documentation-and-release-evidence.md](./tasks/WP04-cleanup-documentation-and-release-evidence.md)  
 **Independent test**: The repository contains one maintained site implementation, all automated and viewport checks pass, and the handoff truthfully distinguishes the branch result from production deployment.
 
-- [ ] T014 Remove unused legacy template assets after replacement validation (WP04)
-- [ ] T015 Rewrite repository documentation for the maintained portfolio (WP04)
-- [ ] T016 Run build, structural, browser, and visual acceptance checks (WP04)
-- [ ] T017 Record the repository/deployment boundary and prepare the reviewed handoff (WP04)
+- [x] T014 Remove unused legacy template assets after replacement validation (WP04)
+- [x] T015 Rewrite repository documentation for the maintained portfolio (WP04)
+- [x] T016 Run build, structural, browser, and visual acceptance checks (WP04)
+- [x] T017 Record the repository/deployment boundary and prepare the reviewed handoff (WP04)
 
 **Implementation sketch**: Remove obsolete Bootstrap/Gulp/template assets only after the new site passes. Document local commands, route model, responsive guarantees, and preview boundary. Produce final screenshots and test evidence without claiming custom-domain deployment.
 
