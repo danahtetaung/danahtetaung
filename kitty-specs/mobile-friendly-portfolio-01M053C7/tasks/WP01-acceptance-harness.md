@@ -25,7 +25,7 @@ subtasks:
 - T003
 - T004
 agent: "codex"
-shell_pid: "42124"
+shell_pid: "35208"
 history:
 - timestamp: '2026-08-16T10:58:48Z'
   event: planned
@@ -145,3 +145,5 @@ Reject tests that pass because controls are missing, rely on internal source str
 - 2026-08-16T11:17:26Z – user – shell_pid=39288 – Moved to planned
 - 2026-08-16T11:17:35Z – codex – shell_pid=42124 – Started implementation via action command
 - 2026-08-16T11:18:23Z – codex – shell_pid=42124 – Accessible-name review fix complete: all five home actions now require exact, singular accessible names.
+- 2026-08-16T11:18:34Z – codex – shell_pid=35208 – Started review via action command
+- 2026-08-16T11:19:49Z – user – shell_pid=35208 – Review passed: 41 executable checks, complete FR coverage, clean dependency audit, meaningful legacy red baseline, and exact accessible-name enforcement.

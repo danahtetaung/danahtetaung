@@ -1,3 +1,8 @@
+---
+verdict: rejected
+reviewer: codex
+---
+
 ## Review findings
 
 **Issue 1 — FR-004 wave safety is not directly exercised.** Add a black-box check at phone portrait and short landscape sizes that confirms the decorative wave is present and does not intercept or cover primary controls.

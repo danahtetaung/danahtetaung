@@ -1,3 +1,8 @@
+---
+verdict: rejected
+reviewer: codex
+---
+
 ## Review finding
 
 **Issue 1 — FR-011 exact accessible names are not enforced.** The home action locators currently use Playwright's substring name matching, so duplicated visual label text such as “Portfolio Portfolio” could still pass. Require exact accessible names for LinkedIn, Email, Services, Portfolio, and Resume so animated duplicate labels remain a single understandable name.
