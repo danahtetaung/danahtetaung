@@ -21,7 +21,8 @@ subtasks:
 - T007
 - T008
 - T009
-agent: codex
+agent: "codex"
+shell_pid: "21832"
 history:
 - timestamp: '2026-08-16T10:58:48Z'
   event: planned
@@ -123,3 +124,8 @@ Run WP01 structural tests continuously. Browser tests may still fail on layout/s
 ## Reviewer Guidance
 
 Verify the page remains meaningful with CSS and JavaScript disabled. Reject icon-only contact actions, placeholder project copy, missing document fallback, multiple `h1` elements, or facts not supported by the current public site/resume.
+
+## Activity Log
+
+- 2026-08-16T11:20:18Z – codex – shell_pid=21832 – Assigned agent via action command
+- 2026-08-16T11:25:39Z – codex – shell_pid=21832 – Ready for review: semantic four-route content, actionable contact/project/document links, verified two-page public resume asset, 32 passing route/action browser checks, and expected WP03-only style/wave failures.
