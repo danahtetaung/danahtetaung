@@ -20,7 +20,7 @@ subtasks:
 - T012
 - T013
 agent: "codex"
-shell_pid: "37344"
+shell_pid: "18880"
 history:
 - timestamp: '2026-08-16T10:58:48Z'
   event: planned
@@ -127,3 +127,4 @@ Review at 320, 390, 768, landscape, and desktop widths. Reject CSS that hides co
 - 2026-08-16T11:39:11Z – user – shell_pid=4500 – Moved to planned
 - 2026-08-16T11:39:30Z – codex – shell_pid=37344 – Started implementation via action command
 - 2026-08-16T11:43:52Z – codex – shell_pid=37344 – Ready for review: replaced continuous canvas redraws with compositor-only drift; build and 41/41 tests pass; all four mobile Lighthouse audits score 100 performance and 100 accessibility; optimized 320 and 1440 captures inspected.
+- 2026-08-16T11:44:06Z – codex – shell_pid=18880 – Started review via action command
