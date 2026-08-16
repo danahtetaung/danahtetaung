@@ -50,11 +50,11 @@
 **Prompt**: [tasks/WP02-canonical-routes-and-content.md](./tasks/WP02-canonical-routes-and-content.md)  
 **Independent test**: All four routes load directly with semantic content and functional links even before visual enhancement is complete.
 
-- [ ] T005 Recreate the semantic home route and verified public metadata (WP02)
-- [ ] T006 Build the Services route with actionable contact links (WP02)
-- [ ] T007 Build the Portfolio route with the featured PermitOps project (WP02)
-- [ ] T008 Build the readable Resume route with PDF actions and optional preview (WP02)
-- [ ] T009 Add and verify the public resume asset and direct-route behavior (WP02)
+- [x] T005 Recreate the semantic home route and verified public metadata (WP02)
+- [x] T006 Build the Services route with actionable contact links (WP02)
+- [x] T007 Build the Portfolio route with the featured PermitOps project (WP02)
+- [x] T008 Build the readable Resume route with PDF actions and optional preview (WP02)
+- [x] T009 Add and verify the public resume asset and direct-route behavior (WP02)
 
 **Implementation sketch**: Build semantic static documents from the verified live content. Use ordinary links and visible labels, place readable resume HTML before the optional PDF preview, and ensure all required assets are repository-owned.
 
