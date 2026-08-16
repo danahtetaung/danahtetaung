@@ -25,7 +25,7 @@ subtasks:
 - T003
 - T004
 agent: "codex"
-shell_pid: "45436"
+shell_pid: "38980"
 history:
 - timestamp: '2026-08-16T10:58:48Z'
   event: planned
@@ -139,3 +139,5 @@ Reject tests that pass because controls are missing, rely on internal source str
 - 2026-08-16T11:13:36Z – codex – shell_pid=39060 – Ready for review: reproducible package setup, structural validator, 39-check Playwright matrix, and verified meaningful legacy red baseline.
 - 2026-08-16T11:13:56Z – codex – shell_pid=45436 – Started review via action command
 - 2026-08-16T11:14:38Z – user – shell_pid=45436 – Moved to planned
+- 2026-08-16T11:14:52Z – codex – shell_pid=38980 – Started implementation via action command
+- 2026-08-16T11:16:06Z – codex – shell_pid=38980 – Review fixes complete: wave visibility safety plus hidden-document pause/resume coverage now fail meaningfully on the legacy baseline.
