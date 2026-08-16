@@ -217,6 +217,29 @@ a {
   pointer-events: none;
 }
 
+.wave-canvas {
+  transform: scaleX(1.025);
+  transform-origin: center;
+}
+
+.wave-canvas[data-wave-state='running'] {
+  animation: wave-drift 16s ease-in-out infinite alternate;
+}
+
+.wave-canvas[data-wave-state='paused'] {
+  animation-play-state: paused;
+}
+
+@keyframes wave-drift {
+  from {
+    transform: scaleX(1.025) translateX(-0.45%);
+  }
+
+  to {
+    transform: scaleX(1.025) translateX(0.45%);
+  }
+}
+
 .wave-fallback {
   top: 50%;
   height: 0;
@@ -555,5 +578,9 @@ a {
     transition-duration: 0.001ms !important;
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
+  }
+
+  .wave-canvas {
+    animation: none !important;
   }
 }

@@ -16,18 +16,10 @@
     const maximumDpr = 2;
     let width = 1;
     let height = 1;
-    let phase = 0;
-    let frameId = 0;
     let resizeFrameId = 0;
-    let previousTime = 0;
+    const phase = 0.3;
 
     if (fallback instanceof HTMLElement) fallback.hidden = true;
-
-    function stopFrame() {
-      if (!frameId) return;
-      window.cancelAnimationFrame(frameId);
-      frameId = 0;
-    }
 
     function sizeCanvas() {
       const bounds = canvas.parentElement?.getBoundingClientRect() ?? canvas.getBoundingClientRect();
@@ -43,15 +35,15 @@
     function waveProfile() {
       const shortLandscape = width >= 640 && height <= 180;
       if (shortLandscape) {
-        return { amplitude: height * 0.34, baseline: height * 0.5, lines: 20, frequency: 2.05 };
+        return { amplitude: height * 0.34, baseline: height * 0.5, lines: 16, frequency: 2.05 };
       }
       if (width < 480) {
-        return { amplitude: height * 0.3, baseline: height * 0.52, lines: 24, frequency: 1.72 };
+        return { amplitude: height * 0.3, baseline: height * 0.52, lines: 18, frequency: 1.72 };
       }
       if (width < 900) {
-        return { amplitude: height * 0.27, baseline: height * 0.51, lines: 28, frequency: 1.55 };
+        return { amplitude: height * 0.27, baseline: height * 0.51, lines: 20, frequency: 1.55 };
       }
-      return { amplitude: height * 0.24, baseline: height * 0.5, lines: 32, frequency: 1.38 };
+      return { amplitude: height * 0.24, baseline: height * 0.5, lines: 22, frequency: 1.38 };
     }
 
     function drawWave() {
@@ -67,7 +59,7 @@
         const alpha = 0.14 + (1 - Math.abs(centeredLine) * 1.45) * 0.54;
 
         context.beginPath();
-        for (let x = -4; x <= width + 4; x += 6) {
+        for (let x = -10; x <= width + 10; x += 10) {
           const progress = x / width;
           const envelope = Math.pow(Math.max(0, Math.sin(progress * Math.PI)), 1.15);
           const primary = Math.sin(progress * Math.PI * 2 * profile.frequency + linePhase);
@@ -77,7 +69,7 @@
             + spread
             + envelope * profile.amplitude * (primary * 0.62 + detail * 0.11);
 
-          if (x === -4) context.moveTo(x, y);
+          if (x === -10) context.moveTo(x, y);
           else context.lineTo(x, y);
         }
 
@@ -88,61 +80,25 @@
     }
 
     function renderStill(state) {
-      stopFrame();
       sizeCanvas();
-      phase = 0.3;
       drawWave();
       canvas.dataset.waveState = state;
     }
 
-    function animate(time) {
-      frameId = 0;
+    function updateMotionState() {
       if (reducedMotion.matches) {
         renderStill('reduced');
         return;
       }
-      if (document.hidden) {
-        canvas.dataset.waveState = 'paused';
-        return;
-      }
-
-      const elapsed = previousTime ? Math.min(time - previousTime, 64) : 16;
-      previousTime = time;
-      phase += elapsed * 0.00022;
-      drawWave();
-      canvas.dataset.waveState = 'running';
-      frameId = window.requestAnimationFrame(animate);
-    }
-
-    function startAnimation() {
-      if (reducedMotion.matches) {
-        renderStill('reduced');
-        return;
-      }
-      if (document.hidden) {
-        stopFrame();
-        canvas.dataset.waveState = 'paused';
-        return;
-      }
-      if (frameId) return;
-
-      previousTime = 0;
-      canvas.dataset.waveState = 'running';
-      frameId = window.requestAnimationFrame(animate);
+      canvas.dataset.waveState = document.hidden ? 'paused' : 'running';
     }
 
     function handleVisibilityChange() {
-      if (document.hidden) {
-        stopFrame();
-        canvas.dataset.waveState = 'paused';
-      } else {
-        startAnimation();
-      }
+      updateMotionState();
     }
 
     function handleMotionChange() {
-      if (reducedMotion.matches) renderStill('reduced');
-      else startAnimation();
+      updateMotionState();
     }
 
     function handleResize() {
@@ -159,7 +115,7 @@
     document.addEventListener('visibilitychange', handleVisibilityChange);
     window.addEventListener('resize', handleResize, { passive: true });
     reducedMotion.addEventListener('change', handleMotionChange);
-    startAnimation();
+    updateMotionState();
   } catch {
     canvas.dataset.waveState = 'unsupported';
   }
