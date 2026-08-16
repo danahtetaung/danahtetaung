@@ -15,7 +15,8 @@ subtasks:
 - T015
 - T016
 - T017
-agent: codex
+agent: "codex"
+shell_pid: "8716"
 history:
 - timestamp: '2026-08-16T10:58:48Z'
   event: planned
@@ -104,3 +105,7 @@ No new acceptance behavior is added here. Run all established checks after clean
 ## Reviewer Guidance
 
 Check that deletion happened only after replacement validation and that README commands work from a clean checkout. Reject any statement implying the live domain changed without direct preview or production evidence.
+
+## Activity Log
+
+- 2026-08-16T11:45:20Z – codex – shell_pid=8716 – Assigned agent via action command
