@@ -1,4 +1,18 @@
 {
+  "accept_commit": "832df547a8a46d2565b452d17797a3063d36e49b",
+  "acceptance_history": [
+    {
+      "accept_commit": "832df547a8a46d2565b452d17797a3063d36e49b",
+      "acceptance_mode": "local",
+      "accepted_at": "2026-08-16T11:54:21.271235+00:00",
+      "accepted_by": "codex",
+      "accepted_from_commit": "e5acc623ecfd4d2eda5bcb59f6906174c293b783"
+    }
+  ],
+  "acceptance_mode": "local",
+  "accepted_at": "2026-08-16T11:54:21.271235+00:00",
+  "accepted_by": "codex",
+  "accepted_from_commit": "e5acc623ecfd4d2eda5bcb59f6906174c293b783",
   "coordination_branch": "kitty/mission-mobile-friendly-portfolio-01M053C7",
   "created_at": "2026-08-16T10:55:14.317524+00:00",
   "flattened": false,
