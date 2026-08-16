@@ -38,3 +38,8 @@ node_modules/
 .kittify/sync-state.json
 .kittify/workspaces/
 kitty-ops/ops-index.jsonl
+
+# Spec Kitty: charter bundle derived files (auto-added by `charter generate`)
+.kittify\charter\directives.yaml
+.kittify\charter\governance.yaml
+.kittify\charter\metadata.yaml
