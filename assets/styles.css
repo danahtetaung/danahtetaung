@@ -548,8 +548,7 @@ a {
   }
 
   .wave-shell {
-    height: clamp(12rem, 60vw, 16rem);
-    margin-top: clamp(3rem, 10vh, 6rem);
+    display: none;
   }
 }
 

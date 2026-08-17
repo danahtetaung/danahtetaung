@@ -130,32 +130,31 @@ test('reduced motion produces a still wave', async ({ page }) => {
   await expect(page.locator('[data-wave-state]')).toHaveAttribute('data-wave-state', 'reduced');
 });
 
-test('the wave stays visible without intercepting controls', async ({ page }) => {
-  for (const viewport of [
-    { width: 320, height: 568 },
-    { width: 844, height: 390 },
-  ]) {
-    await page.setViewportSize(viewport);
-    await page.goto('/');
+test('the wave is hidden on mobile and stays safe above mobile widths', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 568 });
+  await page.goto('/');
+  await expect(page.locator('.wave-shell')).toBeHidden();
 
-    const wave = page.locator('[data-wave-state]');
-    await expect(wave).toBeVisible();
-    const waveBox = await wave.boundingBox();
-    expect(waveBox?.width).toBeGreaterThan(0);
-    expect(waveBox?.height).toBeGreaterThan(0);
+  await page.setViewportSize({ width: 844, height: 390 });
+  await page.goto('/');
 
-    const actions = page.locator('[data-primary-action]');
-    const actionCount = await actions.count();
-    expect(actionCount).toBeGreaterThan(0);
-    for (let index = 0; index < actionCount; index += 1) {
-      const action = actions.nth(index);
-      const actionReceivesPointer = await action.evaluate((element) => {
-        const box = element.getBoundingClientRect();
-        const topElement = document.elementFromPoint(box.left + box.width / 2, box.top + box.height / 2);
-        return topElement === element || element.contains(topElement);
-      });
-      expect(actionReceivesPointer, `action ${index + 1} should sit above the wave`).toBeTruthy();
-    }
+  const wave = page.locator('[data-wave-state]');
+  await expect(wave).toBeVisible();
+  const waveBox = await wave.boundingBox();
+  expect(waveBox?.width).toBeGreaterThan(0);
+  expect(waveBox?.height).toBeGreaterThan(0);
+
+  const actions = page.locator('[data-primary-action]');
+  const actionCount = await actions.count();
+  expect(actionCount).toBeGreaterThan(0);
+  for (let index = 0; index < actionCount; index += 1) {
+    const action = actions.nth(index);
+    const actionReceivesPointer = await action.evaluate((element) => {
+      const box = element.getBoundingClientRect();
+      const topElement = document.elementFromPoint(box.left + box.width / 2, box.top + box.height / 2);
+      return topElement === element || element.contains(topElement);
+    });
+    expect(actionReceivesPointer, `action ${index + 1} should sit above the wave`).toBeTruthy();
   }
 });
 
