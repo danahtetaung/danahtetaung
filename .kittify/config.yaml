@@ -1,0 +1,12 @@
+project:
+  uuid: a763bbdb-fa57-4c1a-820f-74735169050b
+  slug: danahtetaung
+  node_id: 97daac566fee
+  build_id: 2787467d-7da1-5513-a3ed-62eba32d8937
+vcs:
+  type: git
+agents:
+  available:
+  - codex
+  auto_commit: true
+  lint_on_edit: false

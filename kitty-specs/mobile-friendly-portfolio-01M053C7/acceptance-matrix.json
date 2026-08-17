@@ -1,0 +1,171 @@
+{
+  "mission_slug": "mobile-friendly-portfolio-01M053C7",
+  "mission_number": "1",
+  "mission_type": "software-dev",
+  "overall_verdict": "pass",
+  "criteria": [
+    {
+      "criterion_id": "FR-001",
+      "description": "Home presents Dana's identity, contact actions, route navigation, and the black wave.",
+      "proof_type": "automated_test",
+      "evidence": "npm test: home public actions and visible non-intercepting wave passed; phone and desktop captures visually approved.",
+      "pass_fail": "pass",
+      "verified_by": "codex",
+      "verified_at": "2026-08-16T11:53:24Z"
+    },
+    {
+      "criterion_id": "FR-002",
+      "description": "Home navigation reflows without horizontal scrolling at narrow widths.",
+      "proof_type": "automated_test",
+      "evidence": "npm test: home overflow assertions passed at 320, 360, 390, 412, 768, 844-by-390, and 1440 pixels.",
+      "pass_fail": "pass",
+      "verified_by": "codex",
+      "verified_at": "2026-08-16T11:53:24Z"
+    },
+    {
+      "criterion_id": "FR-003",
+      "description": "Primary navigation and content actions meet the 44-by-44-pixel target minimum.",
+      "proof_type": "automated_test",
+      "evidence": "npm test: every primary action has a 44 by 44 pixel target passed.",
+      "pass_fail": "pass",
+      "verified_by": "codex",
+      "verified_at": "2026-08-16T11:53:24Z"
+    },
+    {
+      "criterion_id": "FR-004",
+      "description": "Wave adapts to portrait and landscape without obscuring essential content.",
+      "proof_type": "manual_qa",
+      "evidence": "Playwright wave-safety test passed; final 320, 768, 844-by-390, and 1440 viewport captures were visually inspected.",
+      "pass_fail": "pass",
+      "verified_by": "codex",
+      "verified_at": "2026-08-16T11:53:24Z"
+    },
+    {
+      "criterion_id": "FR-005",
+      "description": "Wave honors reduced motion and pauses when the page is hidden.",
+      "proof_type": "automated_test",
+      "evidence": "npm test: reduced-motion still wave and hidden-document pause/resume assertions passed.",
+      "pass_fail": "pass",
+      "verified_by": "codex",
+      "verified_at": "2026-08-16T11:53:24Z"
+    },
+    {
+      "criterion_id": "FR-006",
+      "description": "Services presents the current offering with actionable phone and email links.",
+      "proof_type": "automated_test",
+      "evidence": "npm run validate and npm test: Services content plus exact tel and mailto destinations passed.",
+      "pass_fail": "pass",
+      "verified_by": "codex",
+      "verified_at": "2026-08-16T11:53:24Z"
+    },
+    {
+      "criterion_id": "FR-007",
+      "description": "Portfolio presents Vanity PermitOps, Dana's contribution, technology context, and the project action.",
+      "proof_type": "automated_test",
+      "evidence": "npm run validate and npm test: Portfolio required content and https://permitops.com destination passed.",
+      "pass_fail": "pass",
+      "verified_by": "codex",
+      "verified_at": "2026-08-16T11:53:24Z"
+    },
+    {
+      "criterion_id": "FR-008",
+      "description": "Resume supplies readable mobile HTML plus View PDF and Download PDF actions.",
+      "proof_type": "automated_test",
+      "evidence": "npm test: mobile resume headings, 16-pixel essential text, and exact PDF actions passed; resume.pdf is 78,389 bytes.",
+      "pass_fail": "pass",
+      "verified_by": "codex",
+      "verified_at": "2026-08-16T11:53:24Z"
+    },
+    {
+      "criterion_id": "FR-009",
+      "description": "Resume remains useful without the optional large-screen PDF embed.",
+      "proof_type": "automated_test",
+      "evidence": "npm test: mobile embed hidden, desktop preview visible, and essential no-script content passed.",
+      "pass_fail": "pass",
+      "verified_by": "codex",
+      "verified_at": "2026-08-16T11:53:24Z"
+    },
+    {
+      "criterion_id": "FR-010",
+      "description": "Every inner page provides a consistent touch-friendly route back home.",
+      "proof_type": "automated_test",
+      "evidence": "npm run validate and npm test: route controls exist, meet target size, and expose visible keyboard focus.",
+      "pass_fail": "pass",
+      "verified_by": "codex",
+      "verified_at": "2026-08-16T11:53:24Z"
+    },
+    {
+      "criterion_id": "FR-011",
+      "description": "Animated duplicate labels expose one understandable accessible name.",
+      "proof_type": "automated_test",
+      "evidence": "npm test: exact accessible-name assertions passed for all primary route actions.",
+      "pass_fail": "pass",
+      "verified_by": "codex",
+      "verified_at": "2026-08-16T11:53:24Z"
+    },
+    {
+      "criterion_id": "FR-012",
+      "description": "Browser titles and descriptions identify Dana and the portfolio accurately.",
+      "proof_type": "automated_test",
+      "evidence": "npm run validate: title and description metadata passed for all four routes.",
+      "pass_fail": "pass",
+      "verified_by": "codex",
+      "verified_at": "2026-08-16T11:53:24Z"
+    },
+    {
+      "criterion_id": "NFR-001",
+      "description": "Every tested route is free of horizontal overflow from 320 through 1440 pixels.",
+      "proof_type": "automated_test",
+      "evidence": "npm test: 28 route-and-viewport overflow checks passed.",
+      "pass_fail": "pass",
+      "verified_by": "codex",
+      "verified_at": "2026-08-16T11:53:24Z"
+    },
+    {
+      "criterion_id": "NFR-002",
+      "description": "Essential phone content renders at 16 pixels or larger.",
+      "proof_type": "automated_test",
+      "evidence": "npm test: mobile resume essential text-size assertion passed.",
+      "pass_fail": "pass",
+      "verified_by": "codex",
+      "verified_at": "2026-08-16T11:53:24Z"
+    },
+    {
+      "criterion_id": "NFR-003",
+      "description": "Production structural validation completes before handoff.",
+      "proof_type": "automated_test",
+      "evidence": "npm ci, npm run build, and npm audit --audit-level=high passed from the final lane.",
+      "pass_fail": "pass",
+      "verified_by": "codex",
+      "verified_at": "2026-08-16T11:53:24Z"
+    },
+    {
+      "criterion_id": "NFR-004",
+      "description": "Mobile performance and accessibility score at least 90 on every route.",
+      "proof_type": "automated_test",
+      "evidence": "Local mobile Lighthouse audits scored 100 performance and 100 accessibility on home, services, portfolio, and resume.",
+      "pass_fail": "pass",
+      "verified_by": "codex",
+      "verified_at": "2026-08-16T11:53:24Z"
+    },
+    {
+      "criterion_id": "NFR-005",
+      "description": "Essential navigation and content remain usable without JavaScript or wave initialization.",
+      "proof_type": "automated_test",
+      "evidence": "npm test: essential content remains when scripting is unavailable passed; wave failure preserves fallback content.",
+      "pass_fail": "pass",
+      "verified_by": "codex",
+      "verified_at": "2026-08-16T11:53:24Z"
+    },
+    {
+      "criterion_id": "NFR-006",
+      "description": "The site remains usable at 200-percent text sizing and by keyboard.",
+      "proof_type": "automated_test",
+      "evidence": "npm test: 200-percent text reflow and visible keyboard-focus assertions passed.",
+      "pass_fail": "pass",
+      "verified_by": "codex",
+      "verified_at": "2026-08-16T11:53:24Z"
+    }
+  ],
+  "negative_invariants": []
+}
