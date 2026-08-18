@@ -10,7 +10,7 @@ const routes = [
     label: 'home',
     file: 'index.html',
     requiredText: ['Dana Htet Aung', 'Services', 'Portfolio', 'Resume'],
-    requiredAssets: ['/assets/styles.css', '/assets/site.js', '/assets/wave.js'],
+    requiredAssets: ['/assets/styles.css', '/assets/site.js'],
     actions: [
       ['LinkedIn', 'https://www.linkedin.com/in/dana-htetaung-1b55782b6/'],
       ['Email', 'mailto:danahtetaungbiz@gmail.com'],

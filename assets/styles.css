@@ -45,7 +45,6 @@ select {
 
 img,
 svg,
-canvas,
 object {
   display: block;
   max-width: 100%;
@@ -195,56 +194,6 @@ a {
 .primary-nav a:hover .action-label-clone,
 .primary-nav a:focus-visible .action-label-clone {
   transform: translateY(0);
-}
-
-.wave-shell {
-  position: relative;
-  width: 100%;
-  height: clamp(12rem, 25vw, 18rem);
-  flex: none;
-  margin-top: clamp(8rem, 18vh, 12rem);
-  overflow: hidden;
-  contain: layout paint size;
-  pointer-events: none;
-}
-
-.wave-canvas,
-.wave-fallback {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-.wave-canvas {
-  transform: scaleX(1.025);
-  transform-origin: center;
-}
-
-.wave-canvas[data-wave-state='running'] {
-  animation: wave-drift 16s ease-in-out infinite alternate;
-}
-
-.wave-canvas[data-wave-state='paused'] {
-  animation-play-state: paused;
-}
-
-@keyframes wave-drift {
-  from {
-    transform: scaleX(1.025) translateX(-0.45%);
-  }
-
-  to {
-    transform: scaleX(1.025) translateX(0.45%);
-  }
-}
-
-.wave-fallback {
-  top: 50%;
-  height: 0;
-  border-top: 0.125rem solid var(--ink);
-  opacity: 0.8;
 }
 
 /* Inner routes */
@@ -546,22 +495,11 @@ a {
   .primary-nav a + a {
     border-left-width: 0.15625rem;
   }
-
-  .wave-shell {
-    display: none;
-  }
 }
 
 @media (max-width: 23.375rem) {
   .primary-nav a:last-child {
     grid-column: 1 / -1;
-  }
-}
-
-@media (min-width: 40rem) and (max-height: 31.25rem) {
-  .wave-shell {
-    height: 9rem;
-    margin-top: 1rem;
   }
 }
 
@@ -577,9 +515,5 @@ a {
     transition-duration: 0.001ms !important;
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
-  }
-
-  .wave-canvas {
-    animation: none !important;
   }
 }
