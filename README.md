@@ -13,7 +13,6 @@ Shared production files live in `assets/`:
 
 - `styles.css` provides the monochrome responsive system and visible focus states.
 - `site.js` improves skip-link focus while leaving navigation functional without JavaScript.
-- `wave.js` renders the decorative layered wave once; a compositor-only drift supplies standard motion.
 - `resume.pdf` is the downloadable resume used by the resume route.
 
 ## Local development
@@ -46,9 +45,9 @@ The browser suite covers every route at 320, 360, 390, 412, 768, 844-by-390 land
 - keyboard focus visibility and exact accessible names;
 - mobile-safe resume content and desktop PDF preview;
 - working public/contact destinations and no-script content;
-- a still wave for reduced motion and a paused wave in hidden tabs.
+- the homepage remains free of the removed decorative wave asset.
 
-The responsive implementation was accepted locally with 41/41 Playwright tests, zero high-severity dependency findings, and mobile Lighthouse scores of 100 performance and 100 accessibility on all four routes.
+The responsive implementation currently passes 39/39 Playwright tests with zero high-severity dependency findings.
 
 ## Deployment status
 

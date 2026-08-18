@@ -124,56 +124,10 @@ test('route controls expose visible keyboard focus', async ({ page }) => {
   }
 });
 
-test('reduced motion produces a still wave', async ({ page }) => {
-  await page.emulateMedia({ reducedMotion: 'reduce' });
+test('home does not render or load the decorative wave', async ({ page }) => {
   await page.goto('/');
-  await expect(page.locator('[data-wave-state]')).toHaveAttribute('data-wave-state', 'reduced');
-});
-
-test('the wave is hidden on mobile and stays safe above mobile widths', async ({ page }) => {
-  await page.setViewportSize({ width: 320, height: 568 });
-  await page.goto('/');
-  await expect(page.locator('.wave-shell')).toBeHidden();
-
-  await page.setViewportSize({ width: 844, height: 390 });
-  await page.goto('/');
-
-  const wave = page.locator('[data-wave-state]');
-  await expect(wave).toBeVisible();
-  const waveBox = await wave.boundingBox();
-  expect(waveBox?.width).toBeGreaterThan(0);
-  expect(waveBox?.height).toBeGreaterThan(0);
-
-  const actions = page.locator('[data-primary-action]');
-  const actionCount = await actions.count();
-  expect(actionCount).toBeGreaterThan(0);
-  for (let index = 0; index < actionCount; index += 1) {
-    const action = actions.nth(index);
-    const actionReceivesPointer = await action.evaluate((element) => {
-      const box = element.getBoundingClientRect();
-      const topElement = document.elementFromPoint(box.left + box.width / 2, box.top + box.height / 2);
-      return topElement === element || element.contains(topElement);
-    });
-    expect(actionReceivesPointer, `action ${index + 1} should sit above the wave`).toBeTruthy();
-  }
-});
-
-test('the wave pauses while the document is hidden', async ({ page }) => {
-  await page.goto('/');
-  const wave = page.locator('[data-wave-state]');
-  await expect(wave).toHaveAttribute('data-wave-state', 'running');
-
-  await page.evaluate(() => {
-    Object.defineProperty(document, 'hidden', { configurable: true, get: () => true });
-    document.dispatchEvent(new Event('visibilitychange'));
-  });
-  await expect(wave).toHaveAttribute('data-wave-state', 'paused');
-
-  await page.evaluate(() => {
-    Object.defineProperty(document, 'hidden', { configurable: true, get: () => false });
-    document.dispatchEvent(new Event('visibilitychange'));
-  });
-  await expect(wave).toHaveAttribute('data-wave-state', 'running');
+  await expect(page.locator('.wave-shell, [data-wave-state]')).toHaveCount(0);
+  await expect(page.locator('script[src="/assets/wave.js"]')).toHaveCount(0);
 });
 
 test('mobile resume is readable without an inline PDF viewer', async ({ page }) => {
